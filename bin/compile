@@ -9,3 +9,6 @@ source "$BIN_DIR/support/bash_functions.sh"
 heroku_buildpack_ruby_install_ruby "$BIN_DIR" "$BUILDPACK_DIR"
 
 $heroku_buildpack_ruby_dir/bin/ruby $BIN_DIR/support/ruby_compile $@
+LD_LIBRARY_PATH=/app/.heroku/vendor
+echo "RUBY BUILDPACK=====> LD_LIBRARY_PATH: $LD_LIBRARY_PATH"
+export LD_LIBRARY_PATH
